@@ -1,0 +1,80 @@
+	<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Classificat</title>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type= "text/css">
+    <!-- <link href="../static/css/main.css" rel="stylesheet" type= "text/css"> -->
+    
+    <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon" type= "image/x-icon">
+    <!-- <link rel="icon" href="./favicon.png" type="image/x-icon"> -->
+   
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    
+</head>
+
+<body>
+    <div id="home"></div>
+    <section id="header">
+        <div class="header container">
+          <div class="nav-bar">
+            <div class="brand">
+              <a href="#home"><h1>Active Map Image Classification</h1></a>
+            </div>
+            <div class="nav-list">
+              <div class="hamburger"><div class="bar"></div></div>
+              <ul>
+                <li><a href="#home" data-after="Home">Home</a></li>
+                <li><a href="#upload" data-after="Projects">Upload</a></li>
+                <!-- <li><a href="#upload" data-after="About">Predict</a></li> -->
+                <li><a href="#answer" data-after="Contact">Result</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="projects">
+    <div class="projects container">
+      <div class="all-projects">
+        <div class="project-item">
+          <div class="project-info">
+            <h1>What is Image Classification?</h1>
+            <br>
+            <br>
+            <p> In Active Map Image Classification we trained model from the ImageNet dataset which contains a thousand <br>classes with multiple images to classify image objects. Image Interpretability is the main concern for image classification, detection, In order to improve accuracy GRAD-CAM is the best method to localize objects in an<br> image with high accuracy. GRAD-CAM utilizes the VGG model to give an output of object with actively <br>mapping of that particular object.</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section -->
+   
+    <section class="container">
+      <div>
+        <h1 class="section-title">Please Upload <span>Image</span> here</h1>  
+      </div>
+    </section>
+    <div id="upload" class="container">
+            {% block content %}{% endblock %}
+    </div>
+    
+    <h2 style="font-size : 3.5rem; color: green; padding-top: 30px; text-align: center;" id="answer">Predicted Answer is ...</h2>
+    <h2 style="font-size : 3.5rem; color: black; padding-top: 30px; text-align: center;"  id="result"></h2>
+
+
+  <section id="footer">
+    <div class="footer container">
+    </div>
+  </section>
+      
+  
+  <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>
+  <!-- <script src="../static/js/main.js" type="text/javascript"></script> -->
+</body>
+
+</html>
